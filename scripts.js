@@ -1,3 +1,5 @@
+// scripts.js (code in here will manage the dynamic elements of the portfolio)
+
 function updateMagiProgress() {
     // 1. Set your project timeline dates (YYYY-MM-DD)
     const startDate = new Date('2025-10-01').getTime();
@@ -19,7 +21,7 @@ function updateMagiProgress() {
     document.getElementById('sync-text').innerText = formattedPercent;
     document.getElementById('sync-bar').style.width = formattedPercent;
 }
-
+// window shaking effect
 function shakeWindows() {
     document.querySelectorAll('.window').forEach((win) => {
         if (Math.random() > 0.45) return;
