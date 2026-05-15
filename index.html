@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGI_INTERFACE_SYSTEM_7.5</title>
+    <style>
+        /* --- NERV/MAC 1-BIT PALETTE --- */
+        :root {
+            --white: #ffffff;
+            --black: #000000;
+            --dither-lite: radial-gradient(var(--black) 0.5px, transparent 0.5px);
+            --dither-heavy: repeating-conic-gradient(var(--black) 0% 25%, var(--white) 0% 50%) 
+                            50% / 2px 2px;
+        }
+
+        * { box-sizing: border-box; cursor: crosshair; }
+
+        body {
+            margin: 0;
+            background-color: var(--white);
+            background-image: var(--dither-lite);
+            background-size: 3px 3px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--black);
+            height: 100vh;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        /* --- APPLE SYSTEM BAR --- */
+        .system-bar {
+            height: 24px;
+            background: var(--white);
+            border-bottom: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            font-size: 13px;
+            font-weight: 900;
+            position: fixed;
+            top: 0; width: 100%; z-index: 1000;
+        }
+
+        .system-bar span { margin-right: 15px; }
+        .system-bar .time { margin-left: auto; }
+
+        /* --- THE DESKTOP --- */
+        .desktop {
+            padding-top: 40px;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+            padding: 40px 20px 80px 20px;
+        }
+
+        /* --- CLASSIC MAC WINDOWS --- */
+        .window {
+            background: var(--white);
+            border: 2px solid var(--black);
+            box-shadow: 6px 6px 0px var(--black);
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .title-bar {
+            height: 22px;
+            background: repeating-linear-gradient(0deg, var(--white), var(--white) 2px, var(--black) 2px, var(--black) 4px);
+            border-bottom: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .title-text {
+            background: var(--white);
+            padding: 0 12px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .close-square {
+            position: absolute; left: 6px;
+            width: 12px; height: 12px;
+            border: 1px solid var(--black);
+            background: var(--white);
+        }
+
+        /* --- CONTENT AREAS --- */
+        .content { padding: 15px; overflow-y: auto; }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .project-card {
+            border: 1px solid var(--black);
+            padding: 10px;
+        }
+
+        .pixel-thumb {
+            width: 100%;
+            height: 100px;
+            background-image: var(--dither-heavy);
+            border: 1px solid var(--black);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center; justify-content: center;
+            font-weight: bold;
+            background-color: #eee;
+        }
+
+        /* --- MAGI STATS PANEL --- */
+        .magi-panel {
+            border-left: 2px dashed var(--black);
+            padding-left: 15px;
+            font-size: 10px;
+        }
+
+        .stat-box {
+            border: 1px solid var(--black);
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .magi-vote {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .vote-light {
+            width: 30%; height: 20px; border: 1px solid var(--black);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .active-vote { background: var(--black); color: var(--white); }
+
+        /* --- BOTTOM DOCK (Image 2 style) --- */
+        .dock {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--white);
+            border-top: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .dock-icon {
+            width: 40px; height: 40px;
+            border: 1px solid var(--black);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            font-size: 8px;
+        }
+
+        /* --- SCROLLBARS --- */
+        ::-webkit-scrollbar { width: 14px; }
+        ::-webkit-scrollbar-track { background-image: var(--dither-heavy); }
+        ::-webkit-scrollbar-thumb { background: var(--white); border: 2px solid var(--black); }
+
+    </style>
+</head>
+<body>
+
+    <div class="system-bar">
+        <span></span>
+        <span>FILE</span>
+        <span>EDIT</span>
+        <span>MAGI_SYNC</span>
+        <span>NEURAL_LINK</span>
+        <span class="time">14:03 PM</span>
+    </div>
+
+    <div class="desktop">
+        
+        <div class="window">
+            <div class="title-bar">
+                <div class="close-square"></div>
+                <div class="title-text">PROJECT_ARCHIVE_EV-01</div>
+            </div>
+            <div class="content">
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="pixel-thumb">IMG_098</div>
+                        <strong>DATA_VISUALS</strong>
+                        <p style="font-size: 10px;">Interface schematics for Bio-Mechanical Sync.</p>
+                        <div style="border: 1px solid black; text-align: center; font-size: 9px; padding: 2px;">OPEN_FILE</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="pixel-thumb">IMG_404</div>
+                        <strong>GEOFRONT_UX</strong>
+                        <p style="font-size: 10px;">Subterranean navigation system design.</p>
+                        <div style="border: 1px solid black; text-align: center; font-size: 9px; padding: 2px;">OPEN_FILE</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; border-top: 2px solid black; padding-top: 10px;">
+                    <div style="font-weight: 900;">NARRATIVE_LOG:</div>
+                    <p style="font-size: 11px;">The system is stable. Neural patterns are matching the 1995 baseline. Proceed with synchronization of portfolio assets...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="magi-panel">
+            <div class="window">
+                <div class="title-bar"><div class="title-text">MAGI_STATUS</div></div>
+                <div class="content">
+                    <div class="stat-box">
+                        SYNC_RATIO: 87.4%
+                        <div style="height: 6px; border: 1px solid black; margin-top: 4px;">
+                            <div style="width: 87%; height: 100%; background: black;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        HARMONICS: OPTIMAL
+                    </div>
+                    <div class="magi-vote">
+                        <div class="vote-light active-vote">MEL</div>
+                        <div class="vote-light active-vote">BAL</div>
+                        <div class="vote-light active-vote">CAS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="window" style="height: 150px;">
+                <div class="title-bar"><div class="title-text">SIGNAL_WAVE</div></div>
+                <div style="height: 100%; background-image: linear-gradient(var(--black) 1px, transparent 1px), linear-gradient(90deg, var(--black) 1px, transparent 1px); background-size: 10px 10px; opacity: 0.3;"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="dock">
+        <div class="dock-icon"><div style="width: 15px; height: 15px; border: 1px solid black;"></div>SYS</div>
+        <div class="dock-icon"><div style="width: 15px; height: 15px; border: 1px solid black; background: black;"></div>DISK</div>
+        <div class="dock-icon"><span>( ? )</span>INFO</div>
+        <div style="margin-left: auto; border: 1px solid black; padding: 5px 15px; font-weight: 900;">
+            EXIT_TO_HALLWAY →
+        </div>
+    </div>
+
+</body>
+</html>
