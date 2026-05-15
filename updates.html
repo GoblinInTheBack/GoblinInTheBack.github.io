@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Updates - GoblinInTheBack Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .update-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .update-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .update-item h3 {
+            color: #764ba2;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        .update-date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .update-item p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .update-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .update-item li {
+            margin-bottom: 8px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-in-progress {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-planned {
+            background: #e7e7ff;
+            color: #4a4a9e;
+        }
+
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .roadmap-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .roadmap-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-weight: bold;
+        }
+
+        .github-link:hover {
+            background: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .roadmap {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Portfolio Site Updates</h1>
+            <p>Tracking improvements and new features coming to GoblinInTheBack.github.io</p>
+        </header>
+
+        <main>
+            <!-- Completed Updates -->
+            <section>
+                <h2>✅ Completed</h2>
+                
+                <div class="update-item">
+                    <h3>Portfolio Foundation</h3>
+                    <div class="update-date">May 15, 2026</div>
+                    <p>Launched the core portfolio website with essential pages and professional design.</p>
+                    <ul>
+                        <li>Home page with navigation</li>
+                        <li>About Me page with skills</li>
+                        <li>Projects showcase page</li>
+                        <li>Contact page</li>
+                        <li>Jekyll theme configuration</li>
+                    </ul>
+                    <span class="status-badge status-completed">Completed</span>
+                </div>
+
+                <div class="update-item">
+                    <h3>Repository Documentation</h3>
+                    <div class="update-date">May 15, 2026</div>
+                    <p>Updated README with project information and live site link.</p>
+                    <span class="status-badge status-completed">Completed</span>
+                </div>
+            </section>
+
+            <!-- In Progress -->
+            <section>
+                <h2>🔄 In Progress</h2>
+                
+                <div class="update-item">
+                    <h3>Enhanced Site Design</h3>
+                    <div class="update-date">Planned: May - June 2026</div>
+                    <p>Improve visual design and user experience across all pages.</p>
+                    <ul>
+                        <li>Custom CSS styling</li>
+                        <li>Better color scheme</li>
+                        <li>Improved typography</li>
+                    </ul>
+                    <span class="status-badge status-in-progress">In Progress</span>
+                </div>
+            </section>
+
+            <!-- Planned Features -->
+            <section>
+                <h2>📋 Planned Features</h2>
+                
+                <div class="roadmap">
+                    <div class="roadmap-card">
+                        <h3>🎨 Portfolio Design</h3>
+                        <p>Custom styling and visual improvements for better aesthetics</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <h3>💼 Project Details</h3>
+                        <p>Add featured projects with descriptions and links</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <h3>📊 Blog Section</h3>
+                        <p>Start publishing articles and project writeups</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <h3>🔗 Social Links</h3>
+                        <p>Add social media and professional network links</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <h3>📱 Mobile Optimization</h3>
+                        <p>Ensure perfect responsiveness on all devices</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <h3>⚡ Performance</h3>
+                        <p>Optimize load times and site performance</p>
+                    </div>
+                </div>
+
+                <div class="update-item" style="margin-top: 30px;">
+                    <h3>Search & Analytics</h3>
+                    <div class="update-date">Planned: Q3 2026</div>
+                    <p>Add site search functionality and analytics tracking to understand visitor behavior.</p>
+                    <span class="status-badge status-planned">Planned</span>
+                </div>
+
+                <div class="update-item">
+                    <h3>Dark Mode Support</h3>
+                    <div class="update-date">Planned: Q3 2026</div>
+                    <p>Implement dark mode toggle for better accessibility and user preference.</p>
+                    <span class="status-badge status-planned">Planned</span>
+                </div>
+
+                <div class="update-item">
+                    <h3>Interactive Demos</h3>
+                    <div class="update-date">Planned: Q4 2026</div>
+                    <p>Add interactive project demos and live previews of work.</p>
+                    <span class="status-badge status-planned">Planned</span>
+                </div>
+            </section>
+
+            <!-- Contributing -->
+            <section>
+                <h2>🤝 Get Involved</h2>
+                <div class="update-item">
+                    <h3>Contribute to the Portfolio</h3>
+                    <p>Have ideas for improvements? Want to contribute? Check out the GitHub repository and open an issue or pull request!</p>
+                    <a href="https://github.com/GoblinInTheBack/GoblinInTheBack.github.io" class="github-link" target="_blank">
+                        Visit GitHub Repository →
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Last updated: May 15, 2026 | Portfolio Site Updates Tracker</p>
+        </footer>
+    </div>
+</body>
+</html>
