@@ -175,10 +175,10 @@
 
     <div class="system-bar">
         <span></span>
-        <span>FILE</span>
-        <span>EDIT</span>
-        <span>MAGI_SYNC</span>
-        <span>NEURAL_LINK</span>
+        <span>PROJECTS</span>
+        <span>GITHUB</span>
+        <span>CONTACT</span>
+        <span>ABOUT_ME</span>
         <span class="time">14:03 PM</span>
     </div>
 
@@ -214,22 +214,21 @@
 
         <div class="magi-panel">
             <div class="window">
-                <div class="title-bar"><div class="title-text">MAGI_STATUS</div></div>
-                <div class="content">
-                    <div class="stat-box">
-                        SYNC_RATIO: 87.4%
-                        <div style="height: 6px; border: 1px solid black; margin-top: 4px;">
-                            <div style="width: 87%; height: 100%; background: black;"></div>
-                        </div>
+            <div class="title-bar"><div class="title-text">MAGI_STATUS</div></div>
+            <div class="content">
+                <div class="stat-box">
+                    SYNC_RATIO: <span id="sync-text">0.0%</span>
+                    <div style="height: 6px; border: 1px solid black; margin-top: 4px;">
+                        <div id="sync-bar" style="width: 0%; height: 100%; background: black;"></div>
                     </div>
-                    <div class="stat-box">
-                        HARMONICS: OPTIMAL
-                    </div>
-                    <div class="magi-vote">
-                        <div class="vote-light active-vote">MEL</div>
-                        <div class="vote-light active-vote">BAL</div>
-                        <div class="vote-light active-vote">CAS</div>
-                    </div>
+                </div>
+                <div class="stat-box">
+                    HARMONICS: OPTIMAL
+                </div>
+                <div class="magi-vote">
+                    <div class="vote-light active-vote">MEL</div>
+                    <div class="vote-light active-vote">BAL</div>
+                    <div class="vote-light active-vote">CAS</div>
                 </div>
             </div>
 
@@ -246,9 +245,26 @@
         <div class="dock-icon"><div style="width: 15px; height: 15px; border: 1px solid black; background: black;"></div>DISK</div>
         <div class="dock-icon"><span>( ? )</span>INFO</div>
         <div style="margin-left: auto; border: 1px solid black; padding: 5px 15px; font-weight: 900;">
-            EXIT_TO_HALLWAY →
+            EXIT →
         </div>
     </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const hour12 = hours % 12 || 12;
+            const timeElement = document.querySelector('.system-bar .time');
+            if (timeElement) {
+                timeElement.textContent = `${hour12}:${minutes} ${ampm}`;
+            }
+        }
+
+        updateTime();
+        setInterval(updateTime, 60000);
+    </script>
 
 </body>
 </html>
