@@ -1,3 +1,10 @@
 theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: GoblinInTheBack's Portfolio
+description: A showcase of projects, skills, and creative work
+author: GoblinInTheBack
+github:
+  url: https://github.com/GoblinInTheBack
+show_downloads: false
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
