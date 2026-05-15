@@ -164,6 +164,20 @@
             font-size: 8px;
         }
 
+        @keyframes window-shake {
+            0%, 100% { transform: translate(0, 0); }
+            15% { transform: translate(-2px, 1px); }
+            30% { transform: translate(2px, -1px); }
+            45% { transform: translate(-1px, 2px); }
+            60% { transform: translate(1px, -2px); }
+            75% { transform: translate(-1px, -1px); }
+        }
+
+        .window.shake,
+        .window:hover {
+            animation: window-shake 0.32s ease-in-out;
+        }
+
         /* --- SCROLLBARS --- */
         ::-webkit-scrollbar { width: 14px; }
         ::-webkit-scrollbar-track { background-image: var(--dither-heavy); }
@@ -252,6 +266,7 @@
         </div>
     </div>
 
+    <script src="scripts.js"></script>
     <script>
         function updateTime() {
             const now = new Date();

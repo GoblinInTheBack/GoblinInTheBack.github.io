@@ -20,5 +20,18 @@ function updateMagiProgress() {
     document.getElementById('sync-bar').style.width = formattedPercent;
 }
 
-// Run the function immediately when the page loads
-window.onload = updateMagiProgress;
+function shakeWindows() {
+    document.querySelectorAll('.window').forEach((win) => {
+        if (Math.random() > 0.45) return;
+        win.classList.add('shake');
+        win.addEventListener('animationend', () => {
+            win.classList.remove('shake');
+        }, { once: true });
+    });
+}
+
+window.addEventListener('load', () => {
+    updateMagiProgress();
+    shakeWindows();
+    setInterval(shakeWindows, 4200);
+});
